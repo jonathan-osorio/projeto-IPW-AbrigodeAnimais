@@ -4,72 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
-@media screen and (max-width:749px) {
 
-    /*Estilos para mobile*/
-
-    main{
-        padding: 10px;
-    }
-   
-    h1, h2, h3, p {
-        text-align: center;
-    }
-
-    p{
-        font-size: 1.3em;
-    }
-    
-    header{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-    header img{
-        height: 100px;
-    }
-
-    header nav>div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav a:hover{
-        background-color: red;
-    }
-
-    div#home1{
-        
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    div#home2{
-        
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column-reverse;
-        
-    }
-    
-    div#home3{
-        
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    form{
-        
-        
-        border-top: solid rgba(0, 0, 0, 0.068);
-        padding-top: 20px;
-    }
-    
-}
 
 /*Código CSS base para todas páginas*/
 *{
@@ -97,6 +32,12 @@ header{
     justify-content: center;
     align-items: center;
 }
+
+#checkbox{
+    appearance: none;
+}
+
+
 
 header h1{
     color: rgb(76, 62, 39)
@@ -137,6 +78,32 @@ header nav a:hover{
     
 }   
 
+.prev, .next {
+    font-size: 40px;
+    line-height: 80px;
+    cursor: pointer;
+  }
+  
+  /* Centraliza e espaça as setas */
+  .prev {
+    margin-right: 40px;
+  }
+  
+  .next {
+    margin-left: 40px;
+  }
+  
+  /* Ajusta o estilo do contêiner do slideshow */
+  .slideshow-container {
+    position: relative;
+    margin-top: 20px; /* Ajuste conforme necessário para espaçamento do conteúdo acima */
+    margin-bottom: 20px; /* Ajuste conforme necessário para espaçamento do conteúdo abaixo */
+    text-align: center; /* Centraliza as setas */
+  }
+  
+
+  
+
 main{
     padding: 15px;
     max-width: 985px;
@@ -162,6 +129,8 @@ main p{
     line-height: 2em;
     
 }
+
+
 
 main img{
     box-shadow: rgba(0, 0, 0, 0.603) 2px 3px 3px;
@@ -420,4 +389,94 @@ main#cont>div#contredes{
 div#contredes img{
     box-shadow: none;
     margin-right: 30px;
+}
+
+@media screen and (max-width:749px) {
+
+    /*Estilos para mobile*/
+
+    main{
+        padding: 10px;
+    }
+   
+    h1, h2, h3, p {
+        text-align: center;
+    }
+
+    p{
+        font-size: 1.3em;
+    }
+    
+    header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    #checkbox{
+        appearance: none;
+        width: 2rem;
+        height: 1.5rem;
+        background: url(imagens/hamburguer.png) center/cover;
+        transition: .3s ease;
+    }
+
+    #checkbox:checked{
+        background: url(imagens/close.png) center/cover;
+        width: 1.3rem;
+        height: 1.3rem;
+        transform: rotate(180deg);
+
+    }
+    header img{
+        height: 100px;
+    }
+
+    header nav>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav{
+        margin-left: 0px;
+    }
+
+    #menu{
+        height: 0;
+        overflow: hidden;
+    }
+
+    header nav a:hover{
+        background-color: rgba(133, 87, 44, 0.322);
+    }
+
+    div#home1{
+        
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    div#home2{
+        
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    
+    div#home3{
+        
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form{
+        border-top: solid rgba(0, 0, 0, 0.068);
+        padding-top: 20px;
+    }
+    
+
 }

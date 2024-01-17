@@ -17,8 +17,8 @@
             <h1>Amigos da Pata</h1>
             <img id="l2" src="imagens/zarla-sitter-care-1x1-2400x2400-20211014-t8vpq8dfxb88dfxcm8jt.png" alt="Logo">
         </div>
-    
-    <nav>
+    <input type="checkbox"  id="checkbox" onchange="dropdown(this)">
+    <nav id="menu">
         <div><!--Opções com links para as outras páginas .html-->
             <a href="index.html">Home</a>
             <a href="relatos.html">Relatos</a>
@@ -34,19 +34,39 @@
     <!--Página de apresentação (Dividido em 3 divs display:flexbox)-->
         
         <h1>Quem somos nós?</h1>
-        
         <div id="home1">
             <p>Somos uma organização sem fins lucrativos que há mais de uma década é um farol de esperança para aqueles que não têm voz.</p>
-            <img id="i1" src="imagens/pexels-mia-x-12195429.jpg" alt="Cães no abrigo">
+            <div id="slideshow1-container" class="slideshow-container">
+                <img class="slideshow1" src="imagens/pexels-mia-x-12195429.jpg" alt="Cães no abrigo">
+                <img class="slideshow1" src="imagens/cat2.jpg" alt="Gato">
+                <img class="slideshow1" src="imagens/pitbulls.jpg" alt="Pitbulls">
+                <a class="prev" onclick="plusSlides(-1, 'slideshow1')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
+              </div>
+          </div>
         </div>
         <div id="home2">
-            <img id="i2" src="imagens/pexels-mia-x-16465570.jpg" alt="Dois cães no abrigo">
+            <div id="slideshow2-container" class="slideshow-container">
+                <img src="imagens/cat1.jpg" alt="" class="slideshow2">
+                <img src="imagens/pexels-mia-x-16465570.jpg" alt="" class="slideshow2">
+                <img src="imagens/rex.png" alt="" class="slideshow2">
+
+                <a class="prev" onclick="plusSlides(-1, 'slideshow2')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'slideshow2')">&#10095;</a>
+            </div>
             <p>Desde o início da nossa jornada, trabalhamos incansavelmente para resgatar e proporcionar um lar seguro e amoroso para os animais que estão em situação de abandono, ou que sofreram de maus tratos.</p>
         </div>
         
         <div id="home3">
             <p>Ao longo dos anos testemunhamos inúmeras transformações, em que animais feridos e assustados floresceram em seres confiantes e felizes.</p>
-            <img src="imagens/pexels-robert-bogdan-663573.jpg" alt="Cão resgatado">
+            <div id="slideshow3-container" class="slideshow-container">
+                <img src="imagens/pexels-robert-bogdan-663573.jpg" alt="" class="slideshow3">
+                <img src="imagens/velhinho.jpg" alt="" class="slideshow3">
+                <img src="imagens/Miley-Before-1.jpg" alt="" class="slideshow3">
+                
+                <a class="prev" onclick="plusSlides(-1, 'slideshow3')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'slideshow3')">&#10095;</a>
+            </div>
         </div>
    </main>
    <footer>
@@ -75,6 +95,6 @@
             </div>
         </div>
    </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>
