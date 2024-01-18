@@ -78,28 +78,7 @@ header nav a:hover{
     
 }   
 
-.prev, .next {
-    font-size: 40px;
-    line-height: 80px;
-    cursor: pointer;
-  }
   
-  /* Centraliza e espaça as setas */
-  .prev {
-    margin-right: 40px;
-  }
-  
-  .next {
-    margin-left: 40px;
-  }
-  
-  /* Ajusta o estilo do contêiner do slideshow */
-  .slideshow-container {
-    position: relative;
-    margin-top: 20px; /* Ajuste conforme necessário para espaçamento do conteúdo acima */
-    margin-bottom: 20px; /* Ajuste conforme necessário para espaçamento do conteúdo abaixo */
-    text-align: center; /* Centraliza as setas */
-  }
   
 
   
@@ -204,9 +183,86 @@ footer img#logo{
 /*Código CSS Home*/
 
 
+.slideshow-container {
+    position: relative;
+    box-sizing: border-box;
+    border: solid black;
+    width: 700px;
+    height: 300px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+  
+ 
+  .slides{
+    display: none;
+  }
+
+
+  .prev,.next {
+      background-color: #bbb;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease-in-out;
+      user-select: none;
+      border-radius: 20px;
+  }
+  
+  .prev {
+      left: 10px;
+
+  }
+  
+  .next {
+      right: 10px;
+  }
+
+
+.prev:hover, .next:hover{
+    background-color: #ac8f83;
+    border-radius: 30px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.active, .dot:hover{
+    background-color: #7a5242;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
 
 main#home p{
     text-indent: 20px;
+    text-align: center;
+    font-size: 1.1rem;
 }
 div#home1{
     margin-top: 50px;
@@ -233,6 +289,7 @@ div#home3{
 
 main#rel p{
     text-indent: 20px;
+    text-align: center;
 }
 
 .rel{
@@ -241,6 +298,8 @@ main#rel p{
 
 .rel img{
     float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -311,6 +370,58 @@ main#animais{
     
     
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 #lista p{
     font-family: 'Handlee', cursive;
@@ -322,6 +433,12 @@ div.item{
     text-align: center;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+div.item:hover{
+    transform: scale(1.05);
 }
 
 @media screen and (max-width:749px) {
@@ -398,6 +515,17 @@ div#contredes img{
     main{
         padding: 10px;
     }
+
+    .slideshow-container {
+        position: relative;
+        box-sizing: border-box;
+        border: none;
+        width: 420px;
+        height: 300px;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 30px;
+      }
    
     h1, h2, h3, p {
         text-align: center;

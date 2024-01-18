@@ -30,43 +30,66 @@
         </div>
     </nav>
    </header>
+
+   
+
    <main id="home">
-    <!--Página de apresentação (Dividido em 3 divs display:flexbox)-->
+    <!--Página de apresentação -->
         
         <h1>Quem somos nós?</h1>
+
+        <!--Slideshow -->
+        <div class="slideshow-container">
+
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo1.jpeg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo2.jpg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo3.webp" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo4.jpg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo5.jpg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo6.jpg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo7.jpg" alt="">
+            </div>
+            <div class="slides fade">
+                <img src="imagens/slideshow/abrigo8.webp" alt="">
+            </div>
+            <!--Setas -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <!--Pontos de Navegação -->
+        <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+
+    </div>
         <div id="home1">
             <p>Somos uma organização sem fins lucrativos que há mais de uma década é um farol de esperança para aqueles que não têm voz.</p>
-            <div id="slideshow1-container" class="slideshow-container">
-                <img class="slideshow1" src="imagens/pexels-mia-x-12195429.jpg" alt="Cães no abrigo">
-                <img class="slideshow1" src="imagens/cat2.jpg" alt="Gato">
-                <img class="slideshow1" src="imagens/pitbulls.jpg" alt="Pitbulls">
-                <a class="prev" onclick="plusSlides(-1, 'slideshow1')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
-              </div>
-          </div>
         </div>
         <div id="home2">
-            <div id="slideshow2-container" class="slideshow-container">
-                <img src="imagens/cat1.jpg" alt="" class="slideshow2">
-                <img src="imagens/pexels-mia-x-16465570.jpg" alt="" class="slideshow2">
-                <img src="imagens/rex.png" alt="" class="slideshow2">
-
-                <a class="prev" onclick="plusSlides(-1, 'slideshow2')">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 'slideshow2')">&#10095;</a>
-            </div>
             <p>Desde o início da nossa jornada, trabalhamos incansavelmente para resgatar e proporcionar um lar seguro e amoroso para os animais que estão em situação de abandono, ou que sofreram de maus tratos.</p>
         </div>
-        
         <div id="home3">
             <p>Ao longo dos anos testemunhamos inúmeras transformações, em que animais feridos e assustados floresceram em seres confiantes e felizes.</p>
-            <div id="slideshow3-container" class="slideshow-container">
-                <img src="imagens/pexels-robert-bogdan-663573.jpg" alt="" class="slideshow3">
-                <img src="imagens/velhinho.jpg" alt="" class="slideshow3">
-                <img src="imagens/Miley-Before-1.jpg" alt="" class="slideshow3">
-                
-                <a class="prev" onclick="plusSlides(-1, 'slideshow3')">&#10094;</a>
-                <a class="next" onclick="plusSlides(1, 'slideshow3')">&#10095;</a>
-            </div>
         </div>
    </main>
    <footer>

@@ -1,7 +1,8 @@
+//variaveis para o menu e o checkboc (icone)
 const menu = document.getElementById('menu');
 const checkbox = document.getElementById('checkbox')
 
-
+//função para alteraão no estado da checkbox
 function dropdown(){
     if(checkbox.checked){
         menu.style.height = "auto"
@@ -10,52 +11,64 @@ function dropdown(){
     }
 }
 
-const imgsUrls = [
-    "imagens/pexels-mia-x-12195429.jpg",
-    "imagens/cat.jpg",
-    "imagens/pitbulls.jpg",
-    "imagens/pexels-mia-x-12195429.jpg",
-    "imagens/cat.jpg",
-    "imagens/pitbulls.jpg",
-    "imagens/pexels-mia-x-12195429.jpg",
-    "imagens/cat.jpg",
-    "imagens/pitbulls.jpg"
-]
 
-let slideIndex1 = 1;
-let slideIndex2 = 1;
-let slideIndex3 = 1;
+let slideIndex = 1;
+showSlides(slideIndex)
 
-function showSlides(index, slideshow) {
-  const slides = document.getElementsByClassName(slideshow);
-  if (index > slides.length) { index = 1; }
-  if (index < 1) { index = slides.length; }
-  for (let i = 0; i < slides.length; i++) {
+//controles next e previous
+//avança ou retrocede com base no valor do argumento
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+//definição do indice
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+//exibe os slides com o indice n atribuido
+
+function showSlides(n){
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  // Se o índice for maior que o número total de slides, volta para o primeiro slide
+  if (n > slides.length){
+    slideIndex = 1}
+  // Se o índice for menor que 1, vai para o último slide
+  if (n<1){
+    slideIndex = slides.length
+  }
+   // Oculta todos os slides
+  for (i=0; i<slides.length; i++){
     slides[i].style.display = "none";
   }
-  slides[index - 1].style.display = "block";
-}
-
-function plusSlides(n, slideshow) {
-  if (slideshow === 'slideshow1') {
-    showSlides(slideIndex1 += n, 'slideshow1');
-    if (slideIndex1 > document.getElementsByClassName('slideshow1').length) {
-      slideIndex1 = 1; // Reinicia o índice quando completa uma volta
-    }
-  } else if (slideshow === 'slideshow2') {
-    showSlides(slideIndex2 += n, 'slideshow2');
-    if (slideIndex2 > document.getElementsByClassName('slideshow2').length) {
-      slideIndex2 = 1; // Reinicia o índice quando completa uma volta
-    }
-  } else if (slideshow === 'slideshow3') {
-    showSlides(slideIndex3 += n, 'slideshow3');
-    if (slideIndex3 > document.getElementsByClassName('slideshow3').length) {
-      slideIndex3 = 1; // Reinicia o índice quando completa uma volta
-    }
+  // Remove a classe "active" de todos os indicadores (dots)
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  
   }
+  // Exibe o slide atual e marca como ativo o dot correspondente
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active"
 }
 
-// Inicializa os slideshows
-showSlides(slideIndex1, 'slideshow1');
-showSlides(slideIndex2, 'slideshow2');
-showSlides(slideIndex3, 'slideshow3')
+//Modal Images
+
+//abrir modal
+function openModal(imageSrc, caption) {
+  var modal = document.getElementById('myModal');
+  var modalImage = document.getElementById('modalImage');
+
+  modal.style.display = 'block';
+  modalImage.src = imageSrc;
+  modalImage.alt = caption;
+}
+
+// Fechar modal
+function closeModal() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = 'none';
+}
+
